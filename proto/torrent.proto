@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package torrent;
+
+service Torrent {
+    rpc AddTorrent(AddTorrentRequest) returns (AddTorrentResponse) {}
+}
+
+message AddTorrentRequest {
+    string url = 1;
+}
+
+message AddTorrentResponse {
+    uint32 id = 1;
+    string name = 2;
+    string hash = 3;
+}
